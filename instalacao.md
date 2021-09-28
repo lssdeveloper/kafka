@@ -21,3 +21,68 @@
 # Exercícios Instalação
 
 ![image](https://user-images.githubusercontent.com/27785070/135142815-70efb429-b5da-4c59-9e83-0d8f980895c4.png)
+
+# Instalação Cluster Kafka
+
+##### 1. Criar a pasta kafka e inserir o arquivo docker-compose.yml da Guia Arquivos do treinamento
+
+##### 2. Instalação do docker e docker-compose
+
+Docker: https://docs.docker.com/get-docker/ (Links para um site externo.)
+Docker-compose: https://docs.docker.com/compose/install/ (Links para um site externo.)
+
+##### 3. Inicializar o cluster Kafka através do docker-compose
+
+`$ docker-compose up -d`
+
+##### 4. Listas as imagens em execução
+
+`$ docker images`
+
+`$ docker ps -a`
+
+##### 5. Visualizar o log dos serviços broker e zookeeper
+
+`$ docker logs zookeeper`
+
+`$ docker logs broker`
+
+##### 6. Visualizar a interface do Confluent Control Center
+
+Acesso: http://localhost:9021/
+
+
+##### _Eu tive uns problemas na instalação do container do KAFKA pois não conseguia parar o serviço do Mongo que se utiliza da mesma porta._
+
+###### SOLUÇÃO:
+_Serviços a serem removidos:_
+
+mongo e mongo-express
+
+_Forcei a parada de cada serviço_
+
+`$ docker container stop mongo`
+
+`$ docker container stop mongo-express`
+
+_Lista cada serviço para conhecer seu ID_
+
+`$ docker ps -a`
+
+_Removendo cada serviço pelo seu ID_
+
+`$ docker container rm 0203bc25ee13`
+
+`$ docker container rm <ID>`
+
+_Remove todos os volumes e imagens não utilizadas_
+  
+`$ docker system prune --all --force --volumes`
+
+Encontrei essa dica em http://www.macoratti.net/19/02/dock_limp1.htm
+
+![image](https://user-images.githubusercontent.com/27785070/135161237-cd3b9df7-70a2-488d-8306-1edfc3f36706.png)
+![image](https://user-images.githubusercontent.com/27785070/135161277-c9a21386-71a2-447b-af26-d6c1538b1ccb.png)
+![image](https://user-images.githubusercontent.com/27785070/135161335-d7cdd31b-6ae9-472e-8f4e-db60637bb8c8.png)
+
+
