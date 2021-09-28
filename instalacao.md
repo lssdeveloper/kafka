@@ -79,8 +79,6 @@ _Remove todos os volumes e imagens não utilizadas_
   
 `$ docker system prune --all --force --volumes`
 
-Encontrei essa dica em http://www.macoratti.net/19/02/dock_limp1.htm
-
 ![image](https://user-images.githubusercontent.com/27785070/135161237-cd3b9df7-70a2-488d-8306-1edfc3f36706.png)
 ![image](https://user-images.githubusercontent.com/27785070/135161277-c9a21386-71a2-447b-af26-d6c1538b1ccb.png)
 ![image](https://user-images.githubusercontent.com/27785070/135161335-d7cdd31b-6ae9-472e-8f4e-db60637bb8c8.png)
